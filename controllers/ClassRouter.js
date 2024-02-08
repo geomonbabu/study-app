@@ -1,0 +1,13 @@
+const express= require("express")
+const router=express.Router()
+const classmodel=require("../models/ClassModel")
+
+router.post("/addcourse",async(req,res)=>{
+    let data = req.body //read values
+    let classes = new classmodel(data)
+    let result = await classes.save()
+    res.json({
+        status:"success"
+    })
+})
+module.exports=router
