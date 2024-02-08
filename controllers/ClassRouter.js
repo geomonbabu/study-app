@@ -16,4 +16,11 @@ router.get("/viewcourse",async(req,res)=>{
         output
     })
 })
+router.post("/searchcourse",async(req,res)=>{
+    let data = req.body //read values
+    let output = await classmodel.find(data)
+    res.json({
+        output
+    })
+})
 module.exports=router
