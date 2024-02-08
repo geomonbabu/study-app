@@ -10,4 +10,10 @@ router.post("/addcourse",async(req,res)=>{
         status:"success"
     })
 })
+router.get("/viewcourse",async(req,res)=>{
+    let output = await classmodel.find()
+    res.json({
+        output
+    })
+})
 module.exports=router
